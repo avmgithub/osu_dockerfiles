@@ -12,7 +12,7 @@ RUN adduser --disabled-password --gecos "" $username
 RUN echo "$username ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 USER $username
 
-RUN cd /home/pytorch && git config --global http.sslVerify false && \
+RUN cd /home/$username && git config --global http.sslVerify false && \
 	git clone https://github.com/avmgithub/pytorch_builder.git && \
 	cd pytorch_builder && \
 	chmod +x build_nimbix.sh && \
