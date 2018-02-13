@@ -17,4 +17,5 @@ RUN cd /home/$username && git config --global http.sslVerify false && \
 	cd pytorch_builder && \
 	chmod +x build_nimbix.sh && \
 	./build_nimbix.sh  pytorch $git_commit $branch foo $python_version LINUX && \
+        cd /home/$username && rm -rf pytorch_builder && \
         sudo apt-get purge -y gfortran
