@@ -12,8 +12,6 @@ ENV branch=master
 #RUN echo "pytorch ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 #USER pytorch
 
-RUN cd /home/$username && rm -rf pytorch_builder
-
 RUN cd /home/pytorch && git config --global http.sslVerify false && \
 	git clone https://github.com/avmgithub/pytorch_builder.git && \
 	cd pytorch_builder && \
